@@ -6,17 +6,17 @@ createGrid(initialSquaresPerSide);
 const newGridButton = document.querySelector("button");
 newGridButton.addEventListener("click", () => {
     let newSquaresPerSide;
-    let isInvalidSelection;
+    let isInvalidValue;
     do {
         newSquaresPerSide = prompt("How many squares per side should the new grid contain? (Must be a whole number in between 1 and 100 inclusive)");
         if(newSquaresPerSide === null) return; 
         
         newSquaresPerSide = Number(newSquaresPerSide);
-        isInvalidSelection = isNaN(newSquaresPerSide) ||
+        isInvalidValue = isNaN(newSquaresPerSide) ||
                              !Number.isInteger(newSquaresPerSide) ||
                              (newSquaresPerSide < 1 || newSquaresPerSide > 100);
 
-    } while(isInvalidSelection);
+    } while(isInvalidValue);
 
     gridContainer.textContent = "";
     createGrid(newSquaresPerSide);
