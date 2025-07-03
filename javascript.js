@@ -10,8 +10,8 @@ newGridButton.addEventListener("click", () => {
     do {
         newSquaresPerSide = prompt("How many squares per side should the new grid contain? (Must be a whole number in between 1 and 100 inclusive)");
         isInvalidSelection = isNaN(+newSquaresPerSide) ||
-                                !Number.isInteger(+newSquaresPerSide) ||
-                                (+newSquaresPerSide < 1 || +newSquaresPerSide > 100);
+                             !Number.isInteger(+newSquaresPerSide) ||
+                             (+newSquaresPerSide < 1 || +newSquaresPerSide > 100);
         if(newSquaresPerSide === null) return;
     } while(isInvalidSelection);
 
