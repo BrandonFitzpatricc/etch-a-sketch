@@ -3,6 +3,22 @@ const gridContainer = document.querySelector("#grid-container");
 const initialSquaresPerSide = 16;
 createGrid(initialSquaresPerSide);
 
+const newGridButton = document.querySelector("button");
+newGridButton.addEventListener("click", () => {
+    let newSquaresPerSide;
+    let isInvalidSelection;
+    do {
+        newSquaresPerSide = prompt("How many squares per side should the new grid contain? (Must be a whole number in between 1 and 100 inclusive)");
+        isInvalidSelection = isNaN(+newSquaresPerSide) ||
+                                !Number.isInteger(+newSquaresPerSide) ||
+                                (+newSquaresPerSide < 1 || +newSquaresPerSide > 100);
+        if(newSquaresPerSide === null) return;
+    } while(isInvalidSelection);
+
+    gridContainer.textContent = "";
+    createGrid(Number(newSquaresPerSide));
+})
+
 function createGrid(squaresPerSide) {
     // The width property must be converted from a string ("{value}px") to a number.
     // Alternatively height could be used, since the container width and height are the same.
