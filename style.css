@@ -1,13 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
+    background-color: hsl(0, 90%, 45%);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+h1 {
+    font-size: 64px;
+}
+
+.text {
+    font-family: "Lobster Two", cursive;
+    color: hsl(40, 95%, 50%);
+    margin: 15px;
+}
+
 #grid-container {
-    height: 700px;
-    width: 700px;
-    border: 5px solid black;
+    height: 740px;
+    width: 740px;
+    background-color: hsl(0, 0%, 90%);
+    border: 5px solid hsl(0, 80%, 40%);
     display: flex;
     flex-wrap: wrap;
+}
+
+button {
+    font-size: 40px;
+    background-color: transparent; 
+    border: none;
+    cursor: pointer;
 }
