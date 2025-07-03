@@ -11,15 +11,16 @@ newGridButton.addEventListener("click", () => {
         newSquaresPerSide = prompt("How many squares per side should the new grid contain? (Must be a whole number in between 1 and 100 inclusive)");
         if(newSquaresPerSide === null) return; 
         
-        isInvalidSelection = isNaN(+newSquaresPerSide) ||
-                             !Number.isInteger(+newSquaresPerSide) ||
-                             (+newSquaresPerSide < 1 || +newSquaresPerSide > 100);
+        newSquaresPerSide = Number(newSquaresPerSide);
+        isInvalidSelection = isNaN(newSquaresPerSide) ||
+                             !Number.isInteger(newSquaresPerSide) ||
+                             (newSquaresPerSide < 1 || newSquaresPerSide > 100);
 
     } while(isInvalidSelection);
 
     gridContainer.textContent = "";
-    createGrid(Number(newSquaresPerSide));
-})
+    createGrid(newSquaresPerSide);
+});
 
 function createGrid(squaresPerSide) {
     // The width property must be converted from a string ("{value}px") to a number.
