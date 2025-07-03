@@ -41,7 +41,7 @@ function createGrid(squaresPerSide) {
                 const blue = Math.floor(Math.random() * 256);
 
                 square.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`; 
-                square.style.opacity = 0.1;
+                square.style.opacity = 0.4;
             } else {
                 square.style.opacity = Number(square.style.opacity) + 0.1;
             }
